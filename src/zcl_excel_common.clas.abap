@@ -78,9 +78,9 @@ CLASS zcl_excel_common DEFINITION
         !e_row       TYPE zexcel_cell_row .
     CLASS-METHODS clone_ixml_with_namespaces
       IMPORTING
-        element       TYPE REF TO if_ixml_element
+        element       TYPE REF TO zif_excel_ixml_element
       RETURNING
-        VALUE(result) TYPE REF TO if_ixml_element.
+        VALUE(result) TYPE REF TO zif_excel_ixml_element.
     CLASS-METHODS date_to_excel_string
       IMPORTING
         !ip_value       TYPE d
@@ -667,8 +667,8 @@ types:
  end of ty_name_value.
 types ty_name_values type STANDARD TABLE OF ty_name_value with EMPTY KEY.
 
-    DATA: iterator    TYPE REF TO if_ixml_node_iterator,
-          node        TYPE REF TO if_ixml_node,
+    DATA: iterator    TYPE REF TO zif_excel_ixml_node_iterator,
+          node        TYPE REF TO zif_excel_ixml_node,
           xmlns       TYPE ty_name_value,
 *          xmlns       TYPE ihttpnvp,
           xmlns_table TYPE TABLE OF ty_name_value.
